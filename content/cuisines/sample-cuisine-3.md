@@ -1,6 +1,5 @@
 ---
-title: "Cuisine Élégance"
-subtitle: "une cuisine de gourmet"
+title: "Autre cuisine 3"
 cover: /uploads/christian-mackie-cc0Gg3BegjE-unsplash.jpg
 ---
 

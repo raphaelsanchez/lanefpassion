@@ -3,33 +3,51 @@
     <header class="site-content__header">
       <h1>Nos cuisines</h1>
       <p class="lead">
-        Nous sélectionnons pour vous des marques haut de gamme en électroménager et ustensiles culinaires.
+        Nous sélectionnons pour vous des marques haut de gamme en électroménager
+        et ustensiles culinaires.
       </p>
     </header>
 
-    <article
-      v-for="item in $page.posts.edges"
-      :key="item.node.id"
-      class="cuisine"
-    >
-      <g-link :to="item.node.path">
-        <h2 class="cuisine__title">{{ item.node.title }}</h2>
-      </g-link>
-    </article>
+    <section class="cuisines">
 
+      <CuisineCard v-for="item in $page.cuisines.edges" :key="item.node.id" :cuisine="item.node"/>
+
+    </section>
   </Layout>
 </template>
 
 <page-query>
-query Cuisines {
-  posts:allCuisinePost{
+query Posts {
+  cuisines: allCuisinePost{
     edges {
       node {
         id
         title
-      	path
+        path
+        subtitle
+        cover
       }
     }
   }
 }
 </page-query>
+
+<script>
+import CuisineCard from "~/components/CuisineCard"
+export default {
+  components: {
+    CuisineCard
+  },
+  metaInfo: {
+    title: 'Nos Cuisine'
+  }
+}
+</script>
+
+<style scoped>
+  .cuisines {
+    display: grid;
+    grid-gap: var(--spacing);
+    grid-template-columns: repeat( auto-fit, minmax(320px, 1fr) );
+  }
+</style>

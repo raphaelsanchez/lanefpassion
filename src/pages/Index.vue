@@ -2,7 +2,7 @@
   <Layout>
 
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
-    <g-image alt="Example image" src="https://placehold.it/1200x700" />
+    <g-image alt="Example image" src="/uploads/sample-partenaire.jpg" />
 
     <h1>Hello, world!</h1>
 
@@ -21,7 +21,7 @@
 <script>
 export default {
   metaInfo: {
-    title: 'Hello, world!'
+    title: 'Tout doit être fait avec passion.'
   }
 }
 </script>

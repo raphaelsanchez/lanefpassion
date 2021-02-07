@@ -1,21 +1,23 @@
 <template>
   <footer class="footer">
-    <div class="footer-logo">
-      <Logo/>
+    <div class="footer__inner">
+      <div class="footer-logo">
+        <Logo />
+      </div>
+      <div class="footer-contact"></div>
+      <nav class="footer-social"></nav>
+      <div class="footer-credits">© Lanef Passion</div>
     </div>
-    <div class="footer-contact"></div>
-    <nav class="footer-social"></nav>
-    <div class="footer-credits">© Lanef Passion</div>
   </footer>
 </template>
 
 <script>
-import Logo from "@/components/Logo"
+import Logo from "@/components/Logo";
 export default {
   components: {
-    Logo
-  }
-}
+    Logo,
+  },
+};
 </script>
 
 <style scoped>
@@ -27,6 +29,11 @@ export default {
 .footer-logo {
   --logo-accent-color: var(--accent-color);
   --logo-color: var(--light-color);
-  max-width: 250px;
+  max-width: 200px;
+}
+
+.footer__inner {
+  max-width: 1440px;
+  margin: auto;
 }
 </style>

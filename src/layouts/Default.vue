@@ -42,19 +42,6 @@ export default {
   --font-heading: 'DM Serif Display', serif;
 }
 
-html {
-  font-size: 16px;
-}
-@media screen and (min-width: 320px) {
-  html {
-    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
-  }
-}
-@media screen and (min-width: 1040px) {
-  html {
-    font-size: 22px;
-  }
-}
 
 body {
   font-family: var(--font-base);
@@ -98,7 +85,6 @@ svg {
 
 .layout {
   margin: auto;
-  max-width: 1440px;
 }
 
 .site-content {

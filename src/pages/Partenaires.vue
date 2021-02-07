@@ -10,7 +10,7 @@
 
     <article v-for="item in $page.posts.edges" :key="item.node.id" class="partenaire" >
       <figure class="partenaire__cover">
-        <g-image :alt="item.node.title" :src="item.node.cover" />
+        <g-image :alt="item.node.title" :src="`${item.node.cover}`" />
       </figure>
       <div class="partenaire__content">
         <h2 class="partenaire__title">{{ item.node.title }}</h2>
@@ -37,6 +37,14 @@ query Partenaires {
   
 }
 </page-query>
+
+<script>
+export default {
+  metaInfo: {
+    title: 'Nos partenaires'
+  }
+}
+</script>
 
 <style scoped>
 .partenaire {

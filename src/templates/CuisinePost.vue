@@ -16,8 +16,9 @@
 query Cuisine ($id: ID!) {
   post: cuisinePost (id: $id) {
     title
-    path
     content
+    subtitle
+    cover
   }
 }
 </page-query>

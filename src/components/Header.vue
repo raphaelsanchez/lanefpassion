@@ -3,8 +3,16 @@
     <g-link class="header__logo" to="/">
       <Logo />
     </g-link>
-    <nav class="header__nav">
-      <button class="header__nav-toggler" data-toggle="menu">Menu</button>
+    <button
+      class="menu-toggle"
+      :class="toggleNav ? 'is-active' : ''"
+      aria-expanded="false"
+      aria-controls="mobile-nav"
+      @click="toggle"
+    >
+      Menu
+    </button>
+    <nav class="header__nav" :class="toggleNav ? 'is-visible' : ''">
       <ul class="menu">
         <li class="menu__item">
           <g-link class="menu__link" to="/">Notre Passion</g-link>
@@ -29,28 +37,46 @@ export default {
   components: {
     Logo,
   },
+  data() {
+    return {
+      toggleNav: false,
+    };
+  },
+  methods: {
+    toggle() {
+      this.toggleNav = !this.toggleNav;
+    },
+  },
 };
 </script>
 
 <style scoped>
 .header {
+  position: relative;
+  z-index: 1000;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  margin: 10px 10px 20px;
   padding: var(--spacing);
-  margin-bottom: 20px;
+  max-width: 1440px;
+  background: white;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
 }
 
 .header__logo {
   --logo-accent-color: var(--accent-color);
   --logo-color: var(--dark-color);
-  max-width: 230px;
+  max-width: 100px;
 }
 
-.header__nav-toggler {
+.menu-toggle {
   padding: 1em 1.5em;
-  border: 2px solid var(--dark-color);
+  border-color: var(--dark-color);
+  border-style: solid;
+  border-width: 0 0 0 2px;
   background-color: var(--light-color);
   font-size: 1em;
   cursor: pointer;
@@ -68,15 +94,23 @@ export default {
   align-items: center;
 }
 
-.header__nav .menu {
-  position: fixed;
-  top: 0;
-  left: auto;
-  right: -100%;
+.header__nav {
+  position: absolute;
+  top: 100%;
+  left: 10px;
+  right: 10px;
   margin: 0;
   padding: var(--spacing);
   background-color: var(--dark-color);
   color: var(--light-color);
+  transition: all 300ms ease-in-out;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  transform: scaleY(0);
+  transform-origin: top center;
+}
+.header__nav.is-visible {
+  transform: scaleY(1)
 }
 
 .menu {
@@ -107,21 +141,28 @@ export default {
 
 @media (min-width: 60rem) {
 
+  .header {
+    margin: 0 auto 20px;
+    box-shadow: none;
+  }
+  .header__logo {
+    max-width: 200px;
+  }
   .menu {
     display: flex;
     flex-wrap: wrap;
   }
 
-  .header__nav-toggler {
+  .menu-toggle {
     display: none;
   }
 
-  .header__nav .menu {
+  .header__nav {
     position: static;
     background-color: var(--light-color);
     color: var(--dark-color);
+    transform: scaleY(1);
   }
 }
-</style>
-  
+
 </style>

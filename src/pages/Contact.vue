@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <section class="text-center">
+    <header class="text-center">
       <h1>Rendez-vous</h1>
       <p class="lead">
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error
@@ -11,7 +11,7 @@
       <a href="tel:+33235023502">02 35 02 35 02</a>
       <br>
       <a href="mailto:contact@lanef-passion.fr">contact@lanef-passion.fr</a>
-    </section>
+    </header>
 
     <section class="text-center">
       <h2>Horaires</h2>
@@ -24,7 +24,7 @@
 <script>
 export default {
   metaInfo: {
-    title: "About us",
+    title: "Contact",
   },
 };
 </script>

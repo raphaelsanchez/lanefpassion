@@ -1,0 +1,60 @@
+<template>
+
+  <article class="cuisine-card">
+    <g-link :to="cuisine.path" class="cuisine-card__content">
+      <h2 class="cuisine-card__title">{{ cuisine.title }}</h2>
+      <p v-if="cuisine.subtitle " class="cuisine-card__subtitle">{{ cuisine.subtitle }}</p>
+    </g-link>
+    <g-image :src="`${cuisine.cover}`" :alt="`Couverture ${cuisine.title}`" />
+  </article>
+
+</template>
+
+<script>
+export default {
+  props: ['cuisine']
+}
+</script>
+
+<style scoped>
+.cuisine-card {
+    position: relative;
+    min-height: 50vh;
+    background-color: var(--medium-color);
+    background-size: cover;
+    background-position: center;
+    color: var(--light-color);
+  }
+  .cuisine-card__content {
+    opacity: 0;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,.8);
+    transform: scale(0.8);
+    transition: all 300ms ease;
+    text-decoration: none;
+  }
+  .cuisine-card__content:hover {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  .cuisine-card__title,
+  .cuisine-card__subtitle {
+    margin: 0;
+  }
+  .cuisine-card__subtitle::before {
+    content: "";
+    display: block;
+    margin: 1em auto;
+    width: 80px;
+    height: 2px;
+    background: var(--light-color);
+  }
+
+</style>
