@@ -30,6 +30,7 @@ export default {
 <style>
 :root {
   --dark-color: #010202;
+  --medium-color: #F3F3F3;
   --light-color: #ffffff;
   --accent-color: #c10b25;
 

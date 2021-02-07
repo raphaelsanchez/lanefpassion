@@ -46,10 +46,12 @@ query Partenaires {
 
 .partenaire__content {
   padding: calc( var(--spacing) * 2 ) calc( var(--spacing) * 1.5 );
-}
-.partenaire:nth-child(even) .partenaire__content {
   background-color: var(--dark-color);
   color: var(--light-color);
+}
+.partenaire:nth-child(even) .partenaire__content {
+  background-color: var(--medium-color);
+  color: var(--dark-color);
 }
 
 @media (min-width: 60rem) {
