@@ -26,4 +26,15 @@ module.exports = {
   templates: {
     CuisinePost: '/cuisines/:title'
   },
+  icon: {
+    favicon: {
+      src: './src/favicon.png',
+      sizes: [16, 32, 96]
+    },
+    touchicon: {
+      src: './src/facicon.png',
+      sizes: [76, 152, 120, 167],
+      precomposed: true
+    }
+  }
 }

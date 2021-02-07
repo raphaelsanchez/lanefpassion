@@ -49,7 +49,7 @@ query Partenaires {
   background-color: var(--dark-color);
   color: var(--light-color);
 }
-.partenaire:nth-child(even) .partenaire__content {
+.partenaire:nth-child(odd) .partenaire__content {
   background-color: var(--medium-color);
   color: var(--dark-color);
 }

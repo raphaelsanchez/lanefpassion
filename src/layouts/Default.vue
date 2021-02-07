@@ -78,7 +78,10 @@ p.lead {
   font-size: 1.2em;
 }
 
-a { color: currentColor}
+a {
+  color: currentColor;
+  cursor: pointer;
+}
 
 img {
   max-width: 100%;
