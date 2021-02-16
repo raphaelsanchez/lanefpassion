@@ -16,13 +16,49 @@ collections:
 
   - name: "settings"
     label: "Paramètres"
-    widget: "object"
-    summary: 'Extrait Réglage du site'
-    fields:
-      - label: "Adresse"
-        name: "address"
-        widget: "object"
-        collapsed: false
+    files:
+      - name: "global"
+        label: "Réglages globaux"
+        file: settings/global.json
+        editor:
+          preview: false
         fields:
-          - {label: "Stree", name: "street", widget: "string"}
+          - label: "Adresse"
+            name: "address"
+            widget: "object"
+            fields:
+              - {label: Street, name: street, widget: string}
+              - {label: CP, name: zip, widget: string}
+              - {label: Ville, name: city, widget: string}
+
+          # Contact
+          - label: "Contact"
+            name: "contact"
+            widget: "object"
+            fields:
+              - {label: Téléphone, name: phone, widget: string}
+              - {label: Email, name: email, widget: string}
+
+          # Réseaux sociaux
+          - label: "Réseaux sociaux"
+            name: "social"
+            widget: "object"
+            fields:
+              - {label: Facebook, name: facebook, widget: string}
+              - {label: Instagram, name: instagram, widget: string}
+              - {label: LinkedIn, name: linkedin, widget: string}
+
+      - label: "Menus"
+        name: "menus"
+        widget: "object"
+        file: settings/menus.json
+        editor:
+          preview: false
+        summary: 'Ajouter vos réseaux sociaux'
+        fields:
+          - {label: Facebook, name: facebook, widget: string}
+          - {label: Instagram, name: instagram, widget: string}
+          - {label: LinkedIn, name: linkedin, widget: string}
+          - {label: Pinterest, name: pinterest, widget: string}
+
 

@@ -6,8 +6,8 @@
       </div>
       <div class="footer-contact">
         <p itemprop="street-address">
-          {{settings.address.street}}<br />
-          {{settings.address.zip}} {{settings.address.city}}
+          {{globalSettings.address.street}}<br />
+          {{globalSettings.address.zip}} {{globalSettings.address.city}}
         </p>
         <p>
           <a href="tel:0235455445">02 35 45 54 45</a>
@@ -16,14 +16,12 @@
         </p>
       </div>
       <nav class="footer-social">
-        <a v-for="(social, index) in settings.socials" :key="index" :href="social.href">{{social.name}}</a>
+        <a v-for="(social, index) in globalSettings.social" :key="index" :href="social.href">{{social.name}}</a>
       </nav>
       <div class="footer-credits">
         {{ new Date().getFullYear() }}
         © Lanef Passion
       </div>
-
-      <pre>{{ settings }}</pre>
     </div>
   </footer>
 </template>
@@ -33,10 +31,10 @@ import Logo from '@/components/Logo'
 export default {
   name: 'Footer',
   props: {
-    settings: {
+    globalSettings: {
       type: Object,
       default: {},
-    },
+    }
   },
   components: {
     Logo,

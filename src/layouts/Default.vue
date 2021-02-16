@@ -4,7 +4,7 @@
     <main class="site-content">
       <slot />
     </main>
-    <Footer :settings="settings" />
+    <Footer :globalSettings="globalSettings" />
   </div>
 </template>
 
@@ -12,13 +12,13 @@
 query {
   metadata {
     siteName
-    settings {
+    globalSettings {
       address {
         street
         zip
         city
       }
-      socials {
+      social {
         name
         href
       }
@@ -36,7 +36,7 @@ export default {
     Footer,
   },
   computed: {
-    settings() { return this.$static.metadata.settings }
+    globalSettings() { return this.$static.metadata.globalSettings }
   }
 };
 </script>

@@ -5,7 +5,8 @@
 // Changes here require a server restart.
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
-const settings = require('./settings.json')
+const globalSettings = require('./settings/global.json')
+const menuSettings = require('./settings/menu.json')
 
 module.exports = function (api) {
   api.loadSource(({ addCollection }) => {
@@ -17,6 +18,7 @@ module.exports = function (api) {
   })
 
   api.loadSource( async store => {
-    store.addMetadata('settings', settings)
+    store.addMetadata('globalSettings', globalSettings)
+    store.addMetadata('menuSettings', menuSettings)
   })
 }
