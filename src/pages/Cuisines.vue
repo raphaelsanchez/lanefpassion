@@ -9,16 +9,15 @@
     </header>
 
     <section class="cuisines">
-
-      <CuisineCard v-for="item in $page.cuisines.edges" :key="item.node.id" :cuisine="item.node"/>
-
+      <CuisineCard v-for="item in cuisines" :key="item.id" :cuisine="item"/>
     </section>
+
   </Layout>
 </template>
 
 <page-query>
-query Posts {
-  cuisines: allCuisinePost{
+query Cuisines {
+  allCuisinePost{
     edges {
       node {
         id
@@ -35,11 +34,17 @@ query Posts {
 <script>
 import CuisineCard from "~/components/CuisineCard"
 export default {
+  name: "Cuisines",
   components: {
     CuisineCard
   },
   metaInfo: {
     title: 'Nos Cuisine'
+  },
+  computed: {
+    cuisines(){
+      return this.$page.allCuisinePost.edges.map( edge => edge.node)
+    }
   }
 }
 </script>
