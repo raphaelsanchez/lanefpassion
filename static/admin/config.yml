@@ -1,0 +1,28 @@
+backend:
+  name: github
+  repo: raphaelsanchez/lanefpassion
+  branch: main
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "cuisines"
+    label: "Cuisines"
+    folder: "content/cuisines"
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+
+  - name: "settings"
+    label: "Paramètres"
+    widget: "object"
+    summary: 'Extrait Réglage du site'
+    fields:
+      - label: "Adresse"
+        name: "address"
+        widget: "object"
+        collapsed: false
+        fields:
+          - {label: "Stree", name: "street", widget: "string"}
+

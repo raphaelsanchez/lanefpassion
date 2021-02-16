@@ -4,7 +4,7 @@
     <main class="site-content">
       <slot />
     </main>
-    <Footer />
+    <Footer :settings="settings" />
   </div>
 </template>
 
@@ -12,6 +12,17 @@
 query {
   metadata {
     siteName
+    settings {
+      address {
+        street
+        zip
+        city
+      }
+      socials {
+        name
+        href
+      }
+    }
   }
 }
 </static-query>
@@ -24,6 +35,9 @@ export default {
     Header,
     Footer,
   },
+  computed: {
+    settings() { return this.$static.metadata.settings }
+  }
 };
 </script>
 

@@ -6,8 +6,8 @@
       </div>
       <div class="footer-contact">
         <p itemprop="street-address">
-          12 bis avenue Carnot<br />
-          76250 Déville-lès-Rouen
+          {{settings.address.street}}<br />
+          {{settings.address.zip}} {{settings.address.city}}
         </p>
         <p>
           <a href="tel:0235455445">02 35 45 54 45</a>
@@ -16,41 +16,32 @@
         </p>
       </div>
       <nav class="footer-social">
-        <a
-          class="menu-link"
-          href="https://www.facebook.com/lanefpassionrouen/"
-          target="_blank"
-          rel="noopener noreferer"
-        >Facebook</a>
-        <a
-          class="menu-link"
-          href="#"
-          target="_blank"
-          rel="noopener noreferer"
-        >Instagram</a>
-        <a
-          class="menu-link"
-          href="#"
-          target="_blank"
-          rel="noopener noreferer"
-        >LinkedIn</a>
+        <a v-for="(social, index) in settings.socials" :key="index" :href="social.href">{{social.name}}</a>
       </nav>
       <div class="footer-credits">
         {{ new Date().getFullYear() }}
         © Lanef Passion
       </div>
+
+      <pre>{{ settings }}</pre>
     </div>
   </footer>
 </template>
 
 <script>
-import Logo from "@/components/Logo";
+import Logo from '@/components/Logo'
 export default {
-  name: "Footer",
+  name: 'Footer',
+  props: {
+    settings: {
+      type: Object,
+      default: {},
+    },
+  },
   components: {
     Logo,
   },
-};
+}
 </script>
 
 <style scoped>
@@ -72,7 +63,9 @@ export default {
   max-width: 1200px;
 }
 
-.footer-contact { text-transform: uppercase; }
+.footer-contact {
+  text-transform: uppercase;
+}
 
 .footer-social a {
   padding: calc(var(--spacing) / 2);
@@ -82,7 +75,6 @@ export default {
   margin-top: var(--spacing);
   text-align: center;
 }
-
 
 @media (min-width: 40rem) {
   .footer {
@@ -102,7 +94,9 @@ export default {
   .footer-contact {
     flex: 0 0 auto;
   }
-  .footer-social { text-align: right; }
+  .footer-social {
+    text-align: right;
+  }
   .footer-credits {
     flex: 1 1 100%;
   }
