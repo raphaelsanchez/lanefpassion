@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "eslint": "^7.20.0",
-    "eslint-plugin-vue": "^7.6.0"
+    "eslint-plugin-gridsome": "^1.6.2",
+    "vue-eslint-parser": "^7.5.0"
   }
 }

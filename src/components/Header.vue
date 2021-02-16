@@ -3,9 +3,8 @@
     <g-link class="header__logo" to="/">
       <Logo />
     </g-link>
-    <button
-      class="menu-toggle"
-      :class="toggleMenuStatus()"
+
+    <button class="menu-toggle" :class="toggleMenuStatus()"
       aria-expanded="false"
       aria-controls="mobile-nav"
       @click="toggleMenu"
@@ -30,28 +29,29 @@
 </template>
 
 <script>
-import Logo from "@/components/Logo";
+import Logo from '@/components/Logo'
 export default {
-  name: "Header",
+  name: 'Header',
   components: {
     Logo,
   },
   data() {
     return {
       isToggleMenu: false,
-    };
+      quote: 'hello',
+    }
   },
   methods: {
     toggleMenu() {
-      this.isToggleMenu = !this.isToggleMenu;
+      this.isToggleMenu = !this.isToggleMenu
     },
     toggleMenuStatus() {
       return !this.isToggleMenu || 'is-active'
       // return this.isToggleMenu ? 'is-active' : null
       // if (this.isToggleMenu ) return 'is-active'
-    }
+    },
   },
-};
+}
 </script>
 
 <style scoped>
@@ -70,6 +70,7 @@ export default {
 .header__logo {
   --logo-accent-color: var(--accent-color);
   --logo-color: var(--dark-color);
+  width: 100%;
   max-width: 100px;
 }
 
@@ -106,6 +107,7 @@ export default {
   left: 0;
   right: 0;
   margin: 0;
+  height: 100%;
   padding: var(--spacing);
   background-color: var(--dark-color);
   color: var(--light-color);

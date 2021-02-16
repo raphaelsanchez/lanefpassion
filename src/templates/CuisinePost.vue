@@ -1,6 +1,7 @@
 <template>
   <Layout>
     <article class="project">
+      <img :src="$page.post.cover" alt="">
       <header class="project__header">
         <h1 class="project__title" v-html="$page.post.title" />
       </header>

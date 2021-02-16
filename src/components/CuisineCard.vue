@@ -5,7 +5,7 @@
       <h2 class="cuisine-card__title">{{ cuisine.title }}</h2>
       <p v-if="cuisine.subtitle " class="cuisine-card__subtitle">{{ cuisine.subtitle }}</p>
     </g-link>
-    <g-image :src="`${cuisine.cover}`" :alt="`Couverture ${cuisine.title}`" width="379" height="568" />
+    <g-image :src="cuisine.cover" :alt="`Couverture ${cuisine.title}`" width="379" height="568" />
   </article>
 
 </template>

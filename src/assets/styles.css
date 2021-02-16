@@ -11,3 +11,11 @@
   --font-accent: "Vesper Libre", serif;
   --font-heading: "DM Serif Display", serif;
 }
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.2rem;
+}
