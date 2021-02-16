@@ -5,18 +5,16 @@
     </g-link>
     <button
       class="menu-toggle"
-      :class="toggleNav ? 'is-active' : ''"
+      :class="toggleMenuStatus()"
       aria-expanded="false"
       aria-controls="mobile-nav"
-      @click="toggle"
+      @click="toggleMenu"
     >
-      Menu
+      <span v-if="isToggleMenu">Fermer</span>
+      <span v-else>Menu</span>
     </button>
-    <nav class="header__nav" :class="toggleNav ? 'is-visible' : ''">
+    <nav class="header__nav" :class="toggleMenuStatus()">
       <ul class="menu">
-        <li class="menu__item">
-          <g-link class="menu__link" to="/">Notre Passion</g-link>
-        </li>
         <li class="menu__item">
           <g-link class="menu__link" to="/cuisines/">Nos cuisines</g-link>
         </li>
@@ -34,18 +32,24 @@
 <script>
 import Logo from "@/components/Logo";
 export default {
+  name: "Header",
   components: {
     Logo,
   },
   data() {
     return {
-      toggleNav: false,
+      isToggleMenu: false,
     };
   },
   methods: {
-    toggle() {
-      this.toggleNav = !this.toggleNav;
+    toggleMenu() {
+      this.isToggleMenu = !this.isToggleMenu;
     },
+    toggleMenuStatus() {
+      return !this.isToggleMenu || 'is-active'
+      // return this.isToggleMenu ? 'is-active' : null
+      // if (this.isToggleMenu ) return 'is-active'
+    }
   },
 };
 </script>
@@ -59,11 +63,8 @@ export default {
   justify-content: space-between;
   align-items: center;
   margin: 10px 10px 20px;
-  padding: var(--spacing);
+  padding: 1em var(--spacing);
   max-width: 1440px;
-  background: white;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
 }
 
 .header__logo {
@@ -73,14 +74,19 @@ export default {
 }
 
 .menu-toggle {
-  padding: 1em 1.5em;
+  position: relative;
+  z-index: 9000;
+  padding: 1em 0 1em 1em;
   border-color: var(--dark-color);
   border-style: solid;
-  border-width: 0 0 0 2px;
-  background-color: var(--light-color);
+  border-width: 0 0 0 1px;
+  background-color: transparent;
   font-size: 1em;
   cursor: pointer;
   text-transform: uppercase;
+}
+.menu-toggle.is-active {
+  color: var(--light-color);
 }
 
 .header__nav-toggler:hover {
@@ -95,22 +101,20 @@ export default {
 }
 
 .header__nav {
-  position: absolute;
-  top: 100%;
-  left: 10px;
-  right: 10px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   margin: 0;
   padding: var(--spacing);
   background-color: var(--dark-color);
   color: var(--light-color);
   transition: all 300ms ease-in-out;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
   transform: scaleY(0);
   transform-origin: top center;
 }
-.header__nav.is-visible {
-  transform: scaleY(1)
+.header__nav.is-active {
+  transform: scaleY(1);
 }
 
 .menu {
@@ -140,9 +144,9 @@ export default {
 }
 
 @media (min-width: 60rem) {
-
   .header {
     margin: 0 auto 20px;
+    padding: var(--spacing);
     box-shadow: none;
   }
   .header__logo {
@@ -164,5 +168,4 @@ export default {
     transform: scaleY(1);
   }
 }
-
 </style>
