@@ -5,8 +5,8 @@
     "city": "Rouen"
   },
   "social": {
-    "Facebook": "https://www.facebook.com/lanefpassionrouen/",
-    "Instagram": "https://www.instagram.com/lanefpassionrouen/",
-    "LinkedIn": "#"
+    "facebook": "https://www.facebook.com/lanefpassionrouen/",
+    "instagram": "#",
+    "linkedIn": "#"
   }
 }
