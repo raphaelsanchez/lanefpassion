@@ -28,20 +28,6 @@ export default {
 </script>
 
 <style>
-:root {
-  --dark-color: #010202;
-  --medium-color: #F3F3F3;
-  --light-color: #ffffff;
-  --accent-color: #c10b25;
-
-  --spacing: 2em;
-
-  --font-base: 'Mulish', -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, sans-serif;
-  --font-accent: 'Vesper Libre', serif;
-  --font-heading: 'DM Serif Display', serif;
-}
-
 
 body {
   font-family: var(--font-base);
