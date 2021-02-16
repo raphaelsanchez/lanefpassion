@@ -4,9 +4,9 @@
     "zip": "76000",
     "city": "Rouen"
   },
-  "social": [
-    { "name": "Facebook", "href": "https://www.facebook.com/lanefpassionrouen/" },
-    { "name": "Instagram", "href": "https://www.instagram.com/lanefpassionrouen/" },
-    { "name": "LinkedIn", "href": "#" }
-  ]
+  "social": {
+    "Facebook": "https://www.facebook.com/lanefpassionrouen/",
+    "Instagram": "https://www.instagram.com/lanefpassionrouen/",
+    "LinkedIn": "#"
+  }
 }
