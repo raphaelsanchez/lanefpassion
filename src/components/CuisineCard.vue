@@ -5,21 +5,25 @@
       <h2 class="cuisine-card__title">{{ cuisine.title }}</h2>
       <p v-if="cuisine.subtitle " class="cuisine-card__subtitle">{{ cuisine.subtitle }}</p>
     </g-link>
-    <g-image :src="`${cuisine.cover}`" :alt="`Couverture ${cuisine.title}`" />
+    <g-image :src="`${cuisine.cover}`" :alt="`Couverture ${cuisine.title}`" width="379" height="568" />
   </article>
 
 </template>
 
 <script>
 export default {
-  props: ['cuisine']
+  props: {
+    cuisine: {
+      type: Object,
+      required: true
+    }
+  }
 }
 </script>
 
 <style scoped>
 .cuisine-card {
     position: relative;
-    min-height: 50vh;
     background-color: var(--medium-color);
     background-size: cover;
     background-position: center;
