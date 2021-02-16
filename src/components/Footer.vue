@@ -14,6 +14,7 @@
 <script>
 import Logo from "@/components/Logo";
 export default {
+  name: "Footer",
   components: {
     Logo,
   },
