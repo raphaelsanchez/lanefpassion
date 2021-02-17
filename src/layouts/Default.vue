@@ -53,19 +53,6 @@ body {
   color: var(--dark-color);
 }
 
-h1,
-h2,
-h3,
-h4 {
-  font-family: var(--font-heading);
-}
-
-
-p.lead {
-  font-family: var(--font-accent);
-  font-size: 1.2em;
-}
-
 a {
   color: currentColor;
   cursor: pointer;

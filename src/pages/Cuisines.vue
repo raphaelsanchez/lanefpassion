@@ -2,14 +2,14 @@
   <Layout>
     <header class="site-content__header">
       <h1>Nos cuisines</h1>
-      <p class="lead">
-        Nous sélectionnons pour vous des marques haut de gamme en électroménager
-        et ustensiles culinaires.
-      </p>
+      <blockquote>
+        “L’essence d’un projet, c’est l’harmonie parfaite entre l’esthétique, l’utile et le juste”
+        <cite>- Frank Lloyd Wright -</cite>
+      </blockquote>
     </header>
 
     <section class="cuisines">
-      <CuisineCard v-for="item in cuisines" :key="item.id" :cuisine="item"/>
+      <CuisineCard v-for="(item, index) in cuisines" :key="index" :cuisine="item"/>
     </section>
 
   </Layout>

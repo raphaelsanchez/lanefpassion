@@ -62,8 +62,7 @@ export default {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  margin: 10px 10px 20px;
-  padding: 1em var(--spacing);
+  padding: 0 var(--spacing);
   max-width: 1440px;
 }
 
@@ -108,7 +107,7 @@ export default {
   right: 0;
   margin: 0;
   height: 100%;
-  padding: var(--spacing);
+  padding: 1em var(--spacing);
   background-color: var(--dark-color);
   color: var(--light-color);
   transition: all 300ms ease-in-out;
@@ -148,7 +147,6 @@ export default {
 @media (min-width: 60rem) {
   .header {
     margin: 0 auto 20px;
-    padding: var(--spacing);
     box-shadow: none;
   }
   .header__logo {

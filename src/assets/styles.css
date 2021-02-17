@@ -38,20 +38,37 @@ body {
   }
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 { font-weight: normal; }
+h1, .display-1,
+h2, .display-2,
+h3, .display-3,
+h4, .display-4,
+h5, .display-5,
+h6, .display-6 {
+  font-family: var(--font-heading);
+  font-weight: normal;
+}
 
-h1 {
+
+h1, .display-1 {
   font-size: 3.2em
 }
-h2 {
+
+h2, .display-2 {
   margin-top: 4rem;
   margin-bottom: 1rem;
   font-size: 2.6em;
+}
+
+h3, .display-3 {
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  font-size: 2em;
+}
+
+h4, .display-4 {
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  font-size: 1.8em;
 }
 
 p.lead {
@@ -64,10 +81,17 @@ p {
   margin-bottom: .9em;
 }
 
+blockquote {
+  font-size: 1.6em;
+  font-family: var(--font-accent);
+}
+blockquote cite {
+  display: block;
+  font-size: .8em;
+}
+
 /* Medias */
 img {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
   max-width: 100%;
 }
 
@@ -93,12 +117,18 @@ a {
   cursor: pointer;
 }
 
+address {
+  text-transform: uppercase;
+  font-style: normal;
+  letter-spacing: .25em;
+}
+
 /* Button */
 .button {
   --button-background: var(--dark-color);
   --button-color: var(--light-color);
   display: inline-block;
-  padding: calc(var(--spacing) / 2);
+  padding: 1em;
   border: 1px solid var(--button-background);
   background-color: var(--button-background);
   color: var(--button-color);
@@ -107,6 +137,12 @@ a {
   letter-spacing: .25rem;
 }
 
+.button + .button { margin-left: 1em;}
+
+.button-accent {
+  --button-background: var(--accent-color);
+  --button-color: var(--light-color);
+}
 .button-secondary {
   --button-background: var(--medium-color);
   --button-color: var(--dark-color);

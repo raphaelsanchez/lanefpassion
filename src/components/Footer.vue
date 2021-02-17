@@ -46,6 +46,7 @@ export default {
 
 <style scoped>
 .footer {
+  margin-top: calc(var(--spacing) * 2);
   padding: 2em;
   background: var(--dark-color);
   color: var(--light-color);
@@ -60,7 +61,7 @@ export default {
 
 .footer__inner {
   margin: auto;
-  max-width: 1200px;
+  max-width: 1440px;
 }
 
 .footer-contact {

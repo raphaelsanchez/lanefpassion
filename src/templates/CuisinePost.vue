@@ -4,7 +4,7 @@
       <header class="project__header">
         <h1 class="project__title">{{ cuisine.title }}</h1>
         <p v-if="cuisine.excerpt" class="projet__excerpt lead">
-          extrait : {{ cuisine.excerpt }}
+          {{ cuisine.excerpt }}
         </p>
       </header>
 
@@ -12,7 +12,7 @@
 
       <footer class="project__footer">
         <g-link to="/cuisines" class="button button-secondary"
-          >Nos cuisines</g-link
+          >← Nos cuisines</g-link
         >
       </footer>
     </article>
@@ -57,4 +57,13 @@ export default {
 .project__content > *:not(img) {
   max-width: 920px;
 }
+.project__content > * {
+  display: block;
+}
+
+.project__footer {
+  margin-top: calc(var(--spacing) * 2);
+  text-align: center;
+}
+
 </style>
