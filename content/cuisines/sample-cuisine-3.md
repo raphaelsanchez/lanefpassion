@@ -1,5 +1,6 @@
 ---
 title: "Autre cuisine 3"
+subtitle: Un sous titre
 cover: /uploads/christian-mackie-cc0Gg3BegjE-unsplash.jpg
 ---
 

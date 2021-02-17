@@ -23,6 +23,13 @@ module.exports = {
       }
     }
   ],
+  transformers: {
+    remark: {
+      plugins: [
+        'remark-unwrap-images'
+      ]
+    }
+  },
   templates: {
     CuisinePost: '/cuisines/:title'
   },

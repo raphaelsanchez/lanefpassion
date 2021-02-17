@@ -8,10 +8,8 @@
       </p>
     </header>
 
-    <article v-for="item in $page.posts.edges" :key="item.node.id" class="partenaire" >
-      <figure class="partenaire__cover">
-        <g-image :alt="item.node.title" :src="`${item.node.cover}`" />
-      </figure>
+    <article v-for="item in $page.posts.edges" :key="item.node.id" class="partenaire">
+      <div class="partenaire__cover"  :style="`background-image: url(${item.node.cover}); background-size:cover;background-postion:center;min-height:400px;`" ></div>
       <div class="partenaire__content">
         <h2 class="partenaire__title">{{ item.node.title }}</h2>
         <p>{{ item.node.description }}</p>

@@ -19,8 +19,9 @@ query {
         city
       }
       social {
-        name
-        href
+        facebook
+        instagram
+        linkedin
       }
     }
   }
@@ -91,7 +92,7 @@ svg {
   margin: auto;
   padding-left: var(--spacing);
   padding-right: var(--spacing);
-  max-width: 1200px;
+  max-width: 1440px;
 }
 
 .site-content__header {

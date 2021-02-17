@@ -7,13 +7,34 @@ media_folder: "static/uploads"
 public_folder: "/uploads"
 
 collections:
+  # Les cuisines
   - name: "cuisines"
     label: "Cuisines"
     folder: "content/cuisines"
     slug: "{{slug}}"
+    create: true
     fields:
       - {label: "Title", name: "title", widget: "string"}
+      - {label: "Soustitre", name: "subtitle", widget: "string"}
+      - {label: "Image", name: "cover", widget: "image"}
+      - {label: "Contenu", name: "body", widget: "markdown"}
 
+  # Les partenaires
+  - label: "Partenaires"
+    name: "partenaires"
+    folder: "content/partenaires"
+    slug: "{{slug}}"
+    summary: "{{title}}"
+    editor:
+      preview: false
+    create: true
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "markdown"}
+      - {label: "Image", name: "cover", widget: "image"}
+      - {label: "Lien", name: "url", widget: "string"}
+
+  # Les réglages
   - name: "settings"
     label: "Paramètres"
     files:

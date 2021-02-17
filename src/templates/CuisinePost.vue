@@ -1,13 +1,19 @@
 <template>
   <Layout>
     <article class="project">
-      <img :src="$page.post.cover" alt="">
       <header class="project__header">
-        <h1 class="project__title" v-html="$page.post.title" />
+        <h1 class="project__title">{{ cuisine.title }}</h1>
+        <p v-if="cuisine.excerpt" class="projet__excerpt lead">
+          extrait : {{ cuisine.excerpt }}
+        </p>
       </header>
-      <div class="post__content" v-html="$page.post.content" />
+
+      <div class="project__content" v-html="cuisine.content" />
+
       <footer class="project__footer">
-        <g-link to="/cuisines" class="button">Nos cuisines</g-link>
+        <g-link to="/cuisines" class="button button-secondary"
+          >Nos cuisines</g-link
+        >
       </footer>
     </article>
   </Layout>
@@ -19,7 +25,36 @@ query Cuisine ($id: ID!) {
     title
     content
     subtitle
+    excerpt
     cover
   }
 }
 </page-query>
+
+<script>
+export default {
+  computed: {
+    cuisine() {
+      return this.$page.post
+    },
+  },
+}
+</script>
+
+<style>
+.project__header {
+  text-align: center;
+}
+
+.project__content > * {
+  margin-left: auto;
+  margin-right: auto;
+}
+.project__content h2 + p {
+  font-size: 1.6em;
+  font-family: var(--font-accent);
+}
+.project__content > *:not(img) {
+  max-width: 920px;
+}
+</style>

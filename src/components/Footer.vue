@@ -16,7 +16,9 @@
         </p>
       </div>
       <nav class="footer-social">
-        <a v-for="(social, index) in globalSettings.social" :key="index" :href="social.href">{{social.name}}</a>
+        <a v-if="globalSettings.social.facebook" :href="globalSettings.social.facebook">Facebook</a>
+        <a v-if="globalSettings.social.instagram" :href="globalSettings.social.instagram">Instagram</a>
+        <a v-if="globalSettings.social.linkedin" :href="globalSettings.social.linkedin">LinkedIn</a>
       </nav>
       <div class="footer-credits">
         {{ new Date().getFullYear() }}
