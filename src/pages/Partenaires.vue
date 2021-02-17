@@ -1,7 +1,7 @@
 <template>
   <Layout>
     <header class="site-content__header">
-      <h1>Partenaire</h1>
+      <h1>Nos partenaires</h1>
       <p class="lead">
         Nous sélectionnons pour vous des marques haut de gamme en électroménager
         et ustensiles culinaires. Venez les retrouver en boutique !

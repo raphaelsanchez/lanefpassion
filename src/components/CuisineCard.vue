@@ -1,6 +1,6 @@
 <template>
 
-  <article class="cuisine-card" :style="`background-image: url(${cuisine.cover});min-height: 500px;`">
+  <article class="cuisine-card" :style="`background-image: url(${cuisine.cover});`">
     <g-link :to="cuisine.path" class="cuisine-card__content">
       <div class="cuisine-card__title display-3">{{ cuisine.title }}</div>
       <div v-if="cuisine.subtitle " class="cuisine-card__subtitle">{{ cuisine.subtitle }}</div>
@@ -23,6 +23,7 @@ export default {
 <style scoped>
 .cuisine-card {
     position: relative;
+    min-height: 600px;
     background-color: var(--medium-color);
     background-size: cover;
     background-position: center;
