@@ -119,6 +119,7 @@ address {
   text-decoration: none;
   text-transform: uppercase;
   letter-spacing: .25rem;
+  font-size: .7em;
 }
 
 .button + .button { margin-left: 1em;}

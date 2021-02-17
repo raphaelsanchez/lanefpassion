@@ -188,11 +188,16 @@ export default {
     position: relative;
     margin-bottom: 100px;
   }
+
+  .home-section-4 {
+    grid-template-columns: 1fr 100px 2fr;
+  }
+
   .home-section-4::before {
     content: "";
     display: block;
     width: 400px;
-    height: 100%;
+    height: 70%;
     position: absolute;
     z-index: -1;
     top: 20%;
@@ -207,6 +212,8 @@ export default {
   .home-section-4 img {
     grid-column: 1 / 4;
     margin-left: 100px;
+    margin-top: 36px;
+    margin-bottom: 50px;
   }
 
   .home-section-5 {
