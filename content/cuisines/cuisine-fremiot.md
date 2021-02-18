@@ -1,5 +1,5 @@
 ---
-title: "Cuisine Élégance"
+title: "Cuisine Frémiot"
 subtitle: "une cuisine de gourmet"
 excerpt: "Phrase d’introduction ? Citation ? Quelle a été la commande du client ? Quel était son souhait ? (avant de dire comment vous y répondez)."
 cover: /uploads/christian-mackie-cc0Gg3BegjE-unsplash.jpg
@@ -13,7 +13,7 @@ Ici, l'on joue de nuances de noir, gris et blanc afin d'apporter une atmosphère
 
 La vue sur le jardin arboré est mise en avant par cet îlot qui lui fait face. Une céramique sombre recouvre le sol et les murs, contrastant avec le plan de travail en quartzite claire.
 
-![](/uploads/smt-1.jpg)
+![](/uploads/fremiot_03bd.jpg)
 
 ## L’îlot central
 

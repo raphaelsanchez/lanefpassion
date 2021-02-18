@@ -46,6 +46,11 @@ export default {
   text-align: center;
 }
 
+.projet__excerpt {
+  margin: 0 auto 2em;
+  max-width: 960px;
+}
+
 .project__content > * {
   margin-left: auto;
   margin-right: auto;
@@ -59,6 +64,11 @@ export default {
 }
 .project__content > * {
   display: block;
+}
+
+.project__content img {
+  margin-top: calc(var(--spacing) * 2);
+  margin-bottom:  calc(var(--spacing) * 2);
 }
 
 .project__footer {

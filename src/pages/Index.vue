@@ -2,7 +2,7 @@
   <Layout>
     <!-- Learn how to use images here: https://gridsome.org/docs/images -->
     <figure class="has-bottom-decoration">
-      <g-image alt="Example image" src="/uploads/accueil_01bd.jpg" />
+      <g-image alt="Example image" src="/uploads/accueil_01bd.jpg" width="1440" height="200" fit="cover"/>
     </figure>
 
     <section class="home-section-1">
@@ -54,7 +54,7 @@
           optimisés et agréables.
         </p>
         <p>Chaque cuisine est unique, comme vous.</p>
-        <g-link class="button" to="/cuisines/">Découvrez nos cuisines</g-link>
+        <g-link class="button" to="/cuisines/" style="margin-top: 2em;">Découvrez nos cuisines</g-link>
       </div>
     </section>
 
@@ -65,7 +65,7 @@
         gestion complète de votre projet.
       </p>
 
-      <g-image alt="Example image" src="/uploads/savoir-faire.jpg" />
+      <g-image alt="Example image" src="/uploads/accueil_05_6_7bd.jpg" />
 
       <p>
         De la conception à la réception de chantier, nous souhaitons que la

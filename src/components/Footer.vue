@@ -9,20 +9,17 @@
           {{globalSettings.address.street}}<br />
           {{globalSettings.address.zip}} {{globalSettings.address.city}}
         </p>
-        <p>
-          <a href="tel:0235455445">02 35 45 54 45</a>
-          <br />
-          <a href="mailto:contact@lanef-passion.fr">contact@lanef-passion.fr</a>
-        </p>
+        <p><a href="tel:0235455445">02 35 45 54 45</a></p>
+        <p><a href="mailto:contact@lanef-passion.fr">contact@lanef-passion.fr</a></p>
       </div>
       <nav class="footer-social">
-        <a v-if="globalSettings.social.facebook" :href="globalSettings.social.facebook">Facebook</a>
-        <a v-if="globalSettings.social.instagram" :href="globalSettings.social.instagram">Instagram</a>
-        <a v-if="globalSettings.social.linkedin" :href="globalSettings.social.linkedin">LinkedIn</a>
+        <a v-if="globalSettings.social.facebook" :href="globalSettings.social.facebook"><g-image class="icon" alt="" src="~/assets/images/facebook.svg" /></a>
+        <a v-if="globalSettings.social.instagram" :href="globalSettings.social.instagram"><g-image class="icon" alt="" src="~/assets/images/instagram.svg" /></a>
+        <a v-if="globalSettings.social.linkedin" :href="globalSettings.social.linkedin"><g-image class="icon" alt="" src="~/assets/images/linkedin.svg" /></a>
       </nav>
       <div class="footer-credits">
         {{ new Date().getFullYear() }}
-        © Lanef Passion
+        © Lanef Passion - <g-link to="/mentions-legales/">Mentions légales</g-link>
       </div>
     </div>
   </footer>
@@ -46,7 +43,7 @@ export default {
 
 <style scoped>
 .footer {
-  margin-top: calc(var(--spacing) * 2);
+  margin-top: calc(var(--spacing) * 4);
   padding: 2em;
   background: var(--dark-color);
   color: var(--light-color);
@@ -66,15 +63,22 @@ export default {
 
 .footer-contact {
   text-transform: uppercase;
+  letter-spacing: .25rem;
+  font-size: .8em;
 }
 
 .footer-social a {
   padding: calc(var(--spacing) / 2);
 }
 
+.footer-social .icon {
+  width: 30px;
+}
+
 .footer-credits {
   margin-top: var(--spacing);
   text-align: center;
+  color: rgba(255,255,255,0.4);
 }
 
 @media (min-width: 40rem) {

@@ -18,10 +18,10 @@
           <g-link class="menu__link" to="/cuisines/">Nos cuisines</g-link>
         </li>
         <li class="menu__item">
-          <g-link class="menu__link" to="/partenaires/">Nos Partenaires</g-link>
+          <g-link class="menu__link" to="/partenaires/">Nos partenaires</g-link>
         </li>
         <li class="menu__item">
-          <g-link class="menu__link" to="/contact/">Rendez-vous</g-link>
+          <g-link class="menu__link menu__accent" to="/contact/">Rendez-vous</g-link>
         </li>
       </ul>
     </nav>
@@ -62,7 +62,7 @@ export default {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  padding: 0 var(--spacing);
+  padding: 1em var(--spacing);
   max-width: 1440px;
 }
 
@@ -77,16 +77,11 @@ export default {
   position: relative;
   z-index: 9000;
   padding: 1em 0 1em 1em;
-  border-color: var(--dark-color);
-  border-style: solid;
-  border-width: 0 0 0 1px;
+  border: none;
   background-color: transparent;
   font-size: 1em;
   cursor: pointer;
   text-transform: uppercase;
-}
-.menu-toggle.is-active {
-  color: var(--light-color);
 }
 
 .header__nav-toggler:hover {
@@ -101,33 +96,44 @@ export default {
 }
 
 .header__nav {
-  position: fixed;
-  top: 0;
+  position: absolute;
+  top: 100%;
   left: 0;
   right: 0;
   margin: 0;
-  height: 100%;
   padding: 1em var(--spacing);
-  background-color: var(--dark-color);
-  color: var(--light-color);
+  background-color: var(--light-color);
   transition: all 300ms ease-in-out;
   transform: scaleY(0);
   transform-origin: top center;
 }
 .header__nav.is-active {
   transform: scaleY(1);
+  box-shadow: 0 80px 80px rgba(0,0,0,.2);
 }
 
+.header__nav .menu {
+  margin-left: auto;
+}
 .menu {
   list-style: none;
   padding-left: 0;
 }
 
+.menu__item {
+  margin: 0 .5em;
+}
+
 .menu__link {
+  --link-background: transparent;
+  --link-color: var(--dark-color);
   display: inline-block;
-  padding: 0.5em 0.75em;
+  padding: 1em;
   text-decoration: none;
-  color: currentColor;
+  font-weight: bold;
+  color: var(--link-color);
+  background-color: var(--link-background);
+  transition: var(--transition);
 }
 
 .menu__link:not(:last-child) {
@@ -135,14 +141,17 @@ export default {
 }
 
 .menu__link:hover,
-.menu__link:focus {
-  text-decoration: underline;
+.menu__link:focus,
+.menu__link.active {
+  --link-background: var(--dark-color);
+  --link-color: var(--light-color);
 }
 
-.menu__link.active--exact {
-  background: #000;
-  color: #fff;
+.menu__accent:hover,
+.menu__accent.active {
+  background-color: var(--accent-color);
 }
+
 
 @media (min-width: 60rem) {
   .header {
