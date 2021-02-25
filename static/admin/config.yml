@@ -67,6 +67,7 @@ collections:
             fields:
               - {label: Facebook, name: facebook, widget: string}
               - {label: Instagram, name: instagram, widget: string}
+              - {label: Pinterest, name: pinterest, widget: string}
               - {label: LinkedIn, name: linkedin, widget: string}
 
       - label: "Menus"
