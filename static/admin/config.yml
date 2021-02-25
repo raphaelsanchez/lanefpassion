@@ -71,15 +71,14 @@ collections:
 
       - label: "Menus"
         name: "menus"
-        widget: "object"
         file: settings/menus.json
-        editor:
-          preview: false
-        summary: 'Ajouter vos réseaux sociaux'
         fields:
-          - {label: Facebook, name: facebook, widget: string}
-          - {label: Instagram, name: instagram, widget: string}
-          - {label: LinkedIn, name: linkedin, widget: string}
-          - {label: Pinterest, name: pinterest, widget: string}
+          - name: nav-primary
+            label: Menu principal
+            label_singular: 'Menu'
+            widget: list
+            fields:
+              - { name: 'name', label: 'Label', widget: 'string'}
+              - { name: 'href', label: 'Url', widget: 'string'}
 
 
