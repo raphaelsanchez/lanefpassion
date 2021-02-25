@@ -21,6 +21,7 @@ query {
       social {
         facebook
         instagram
+        pinterest
         linkedin
       }
     }

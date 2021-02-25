@@ -13,9 +13,10 @@
         <p><a href="mailto:contact@lanef-passion.fr">contact@lanef-passion.fr</a></p>
       </div>
       <nav class="footer-social">
-        <a v-if="globalSettings.social.facebook" :href="globalSettings.social.facebook"><g-image class="icon" alt="" src="~/assets/images/facebook.svg" /></a>
-        <a v-if="globalSettings.social.instagram" :href="globalSettings.social.instagram"><g-image class="icon" alt="" src="~/assets/images/instagram.svg" /></a>
-        <a v-if="globalSettings.social.linkedin" :href="globalSettings.social.linkedin"><g-image class="icon" alt="" src="~/assets/images/linkedin.svg" /></a>
+        <a v-if="globalSettings.social.facebook" :href="globalSettings.social.facebook" target="_blank" rel="noopener noreferrer"><g-image class="icon" alt="" src="~/assets/images/facebook.svg" /></a>
+        <a v-if="globalSettings.social.instagram" :href="globalSettings.social.instagram" target="_blank" rel="noopener noreferrer"><g-image class="icon" alt="" src="~/assets/images/instagram.svg" /></a>
+        <a v-if="globalSettings.social.pinterest" :href="globalSettings.social.pinterest" target="_blank" rel="noopener noreferrer"><g-image class="icon" alt="" src="~/assets/images/pinterest.svg" /></a>
+        <a v-if="globalSettings.social.linkedin" :href="globalSettings.social.linkedin" target="_blank" rel="noopener noreferrer"><g-image class="icon" alt="" src="~/assets/images/linkedin.svg" /></a>
       </nav>
       <div class="footer-credits">
         {{ new Date().getFullYear() }}
