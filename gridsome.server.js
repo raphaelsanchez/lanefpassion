@@ -6,7 +6,7 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 
 const globalSettings = require('./settings/global.json')
-const menuSettings = require('./settings/menu.json')
+const menuSettings = require('./settings/menus.json')
 
 module.exports = function (api) {
   api.loadSource(({ addCollection }) => {
